@@ -1,0 +1,7 @@
+.bg{
+    background-image: url(../../../assets/images/images.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    border-radius: 10px;
+}
