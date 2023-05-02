@@ -14,7 +14,42 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+        if (!/(?=.*[A-Z])/.test(password)) {
+            return toast('🦄 Password must be at least one uppercase!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+            return toast('🦄 Password must be one special character!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else if (password.length < 6) {
+            return toast('🦄 Password must be at least 6 characters long!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
         registerUser(email, password)
             .then(result => {
                 const user = result.user;
