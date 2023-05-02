@@ -6,7 +6,7 @@ import { FaAngleRight, FaRegCopyright } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className='rounded-lg bg-stone-800 lg:container mx-auto w-full'>
-            <div className='text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 py-16 mt-8 leading-loose tracking-widest'>
+            <div className='text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-4 py-16 mt-8 leading-loose tracking-widest'>
                 <div>
                     <h2 className='text-3xl font-bold mb-5'>Bangla Food</h2>
                     <p className='text-xl'>There are many variations of passages of lorem ipsum available, but the majority suffered.</p>
@@ -33,8 +33,8 @@ const Footer = () => {
                     <h2 className='text-2xl font-bold mb-5'>Contact Us</h2>
                     <div className='text-xl'>
                         <p>Phone:+8801737033244</p>
-                        <p className='mt-3 mb-3'>Email:mdsaadsheikh7096@gmail.com</p>
-                        <p>Programming-hero.com</p>
+                        <p className='mt-3 mb-3'>mdsaadsheikh7096@gmail.com</p>
+                        <p>Learn with: Programming-hero.com</p>
                         <p className='mt-3 mb-3'>Address: Natore-Sadar, Natore, Rajshahi, Bangladesh</p>
                     </div>
                 </div>
