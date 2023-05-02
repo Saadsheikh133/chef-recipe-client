@@ -1,10 +1,12 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const SingleCard = ({ chef }) => {
-    const { chef_name, image, experience, num_recipes, likes } = chef;
+    const { id, chef_name, image, experience, num_recipes, likes } = chef;
     return (
         <div>
             <div className="card w-full h-full bg-base-100 shadow-xl">
@@ -13,9 +15,9 @@ const SingleCard = ({ chef }) => {
                     <h2 className="card-title text-2xl font-bold">Name: {chef_name}</h2>
                     <p>Experience: {experience}</p>
                     <p>Num of Recipes: {num_recipes}</p>
-                    <p>Likes: {likes} <FaThumbsUp className='inline ml-2'></FaThumbsUp> </p>
+                    <p>Likes: {likes} <FaThumbsUp className='inline ml-2 text-blue-400'></FaThumbsUp> </p>
                     <div className="card-actions justify-center mt-4">
-                        <button className="btn btn-primary">View Recipes</button>
+                        <Link to = {`/recipe/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
                     </div>
                 </div>
             </div>
