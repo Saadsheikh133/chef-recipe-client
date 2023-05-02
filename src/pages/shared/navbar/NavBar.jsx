@@ -16,6 +16,7 @@ const NavBar = () => {
                             <li tabIndex={0}>
                                 <Link to = '/blog' className="justify-between">Blog </Link>
                             </li>
+                            <li><Link to='/about'>About</Link></li>
                         </ul>
                     </div>
                     <h1 className="text-2xl font-bold">Bangla Food</h1>
@@ -24,9 +25,9 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to='/'>Home</Link></li>
                         <li tabIndex={0}>
-                            <Link to = '/blog'> Blog </Link>
-                            
+                            <Link to='/blog'> Blog </Link>
                         </li>
+                        <li><Link to='/about'>About</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
