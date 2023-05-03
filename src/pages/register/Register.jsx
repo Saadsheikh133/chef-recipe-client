@@ -1,11 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { FaRegEye } from 'react-icons/fa';
 
 const Register = () => {
-    const { registerUser } = useContext(AuthContext);
+    const [show, setShow] = useState(false);
+    const { registerUser, user, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleRegister = event => {
         event.preventDefault();
@@ -14,6 +21,8 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(name, photo)
+
         if (!/(?=.*[A-Z])/.test(password)) {
             return toast('🦄 Password must be at least one uppercase!', {
                 position: "top-center",
@@ -53,7 +62,12 @@ const Register = () => {
         registerUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                updateUser(name, photo)
+                    .then(result => {
+                        console.log(result?.user)
+                    })
+                    .catch(error => console.log(error.message))
+                navigate(from, { replace: true })
                 form.reset();
                 toast('🦄 User has been created successfully', {
                     position: "top-center",
@@ -77,7 +91,9 @@ const Register = () => {
                     progress: undefined,
                     theme: "light",
                 });
-        })
+            })
+        
+       
     }
     return (
         <div>
@@ -110,7 +126,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="file" name="photo" placeholder="Your photo" className="input input-bordered" />
+                                <input type="url" name="photo" placeholder="Your photo" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -118,11 +134,12 @@ const Register = () => {
                                 </label>
                                 <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="Your password" className="input input-bordered" required />
+                                    <input type={show ? 'text' : 'password'} name='password' placeholder="Your password" className="input input-bordered" required />
+                                    <FaRegEye onClick={() => setShow(!show)} size = {24} className='absolute top-12 right-4 cursor-pointer'></FaRegEye>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none">Register</button>

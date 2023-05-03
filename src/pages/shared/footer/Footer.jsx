@@ -23,10 +23,10 @@ const Footer = () => {
                     <h2 className='text-2xl font-bold mb-5'>Support</h2>
                     <div className='text-xl'>
                         <p className='mb-3'><Link to='/'><FaAngleRight className='inline'></FaAngleRight>Home</Link></p>
-                        <p className='mb-3'><Link><FaAngleRight className='inline'></FaAngleRight>About</Link></p>
+                        <p className='mb-3'><Link to = '/about'><FaAngleRight className='inline'></FaAngleRight>About</Link></p>
                         <p className='mb-3'><Link> <FaAngleRight className='inline'></FaAngleRight>Services</Link></p>
                         <p className='mb-3'><Link to='/blog'><FaAngleRight className='inline'></FaAngleRight>Blog</Link></p>
-                        <p className='mb-3'><Link><FaAngleRight className='inline'></FaAngleRight> Contact</Link></p>
+                        <p className='mb-3 cursor-pointer'><FaAngleRight className='inline'></FaAngleRight> Contact</p>
                     </div>
                 </div>
                 <div>

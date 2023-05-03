@@ -2,12 +2,27 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import SingleRecipe from '../singleRecipe/SingleRecipe';
+import { ColorRing } from 'react-loader-spinner';
 
 const ChefRecipes = () => {
+    const navigation = useNavigation();
     const chefInfo = useLoaderData();
     const { image, chef_name, description, likes, num_recipes, experience, recipes } = chefInfo;
+
+    if (navigation.state === "loading") {
+        return < ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{ margin: 'auto' }
+            }
+            wrapperClass="blocks-wrapper"
+            colors={['#b8c480', '#B2A3B5', '#F4442E', '#51E5FF', '#429EA6']}
+        />
+    }
     return (
         <div className='container mx-auto'>
             <div className='bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-5 rounded-lg text-white'>

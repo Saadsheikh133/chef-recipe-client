@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaRegEye } from 'react-icons/fa';
 
 const Login = () => {
+    const [show, setShow] = useState(false);
     const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -135,19 +137,17 @@ const Login = () => {
                                 </label>
                                 <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="Your password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                    <FaRegEye onClick={() => setShow(!show)} size = {20} className='absolute top-12 right-4 cursor-pointer'></FaRegEye>
+                                <input type={show ? 'text' : "password"} name='password' placeholder="Your password" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none">Login</button>
                             </div>
-                            <p>New to Bangla food? <Link to='/register'>Please Register.</Link></p>
+                            <p>New to this site? <Link to='/register'>Please Register.</Link></p>
                         </div>
                         <button onClick={handleGoogleLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none'>Google</button>
                         <button onClick={handleGithubLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none my-5 '>Github</button>

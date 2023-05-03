@@ -3,6 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const SingleCard = ({ chef }) => {
@@ -10,7 +11,7 @@ const SingleCard = ({ chef }) => {
     return (
         <div>
             <div className="card w-full h-full bg-base-100 shadow-xl">
-                <figure><img className='object-cover w-full  rounded-lg' src={image} alt="Shoes" /></figure>
+                <figure><LazyLoad><img className=' h-96 w-full  rounded-lg' src={image} alt="Shoes" /></LazyLoad></figure>
                 <div className="card-body items-center text-xl">
                     <h2 className="card-title text-2xl font-bold">Name: {chef_name}</h2>
                     <p>Experience: {experience}</p>
