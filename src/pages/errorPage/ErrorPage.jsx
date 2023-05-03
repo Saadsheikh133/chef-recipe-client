@@ -7,7 +7,7 @@ export default function ErrorPage() {
     console.error(error);
 
     return (
-        <div className="flex justify-center items-center h-screen text-center" id="error-page">
+        <div className="flex justify-center items-center h-screen text-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%" id="error-page">
             <div className="relative text-white">
                 <img className="rounded-lg" src={err} alt="" />
                 <div className="absolute  right-0 top-0 left-0">

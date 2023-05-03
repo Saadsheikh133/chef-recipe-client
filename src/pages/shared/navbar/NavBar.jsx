@@ -19,7 +19,7 @@ const NavBar = () => {
                             <li><Link to='/about'>About</Link></li>
                         </ul>
                     </div>
-                    <h1 className="text-2xl font-bold">Bangla Food</h1>
+                    <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-300 inline-block text-transparent bg-clip-text">Healthy Foods</h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-xl">
