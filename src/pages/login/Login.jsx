@@ -6,12 +6,44 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const { loginUser, googleLogin } = useContext(AuthContext);
+    const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
 
+
+
+    const handleGithubLogin = () => {
+        githubLogin()
+            .then(result => {
+                const loggedUser = result.user;
+                toast('🦄 User login successfully', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+
+            })
+            .catch(error => {
+                toast(error.message, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            })
+    }
 
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
+                const loggedUser = result.user;
                 toast('🦄 User login successfully', {
                     position: "top-center",
                     autoClose: 5000,
@@ -34,7 +66,7 @@ const Login = () => {
                     progress: undefined,
                     theme: "light",
                 });
-        })
+            })
     }
 
     const handleLoginUser = event => {
@@ -113,7 +145,7 @@ const Login = () => {
                             <p>New to Bangla food? <Link to='/register'>Please Register.</Link></p>
                         </div>
                         <button onClick={handleGoogleLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none'>Google</button>
-                        <button className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none my-5 '>Github</button>
+                        <button onClick={handleGithubLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none my-5 '>Github</button>
                     </div>
                 </div>
             </form>

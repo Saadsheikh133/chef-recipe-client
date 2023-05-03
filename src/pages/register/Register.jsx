@@ -93,12 +93,12 @@ const Register = () => {
                 pauseOnHover
                 theme="light"
             />
-            <form onSubmit={handleRegister} className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col">
+            <form onSubmit={handleRegister} className="hero min-h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-lg container mx-auto border-none">
+                <div className="hero-content flex-col glass border-none rounded-lg">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold mb-4">Please Register</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -125,7 +125,7 @@ const Register = () => {
                                 <input type="password" name='password' placeholder="Your password" className="input input-bordered" required />
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn btn-primary bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none">Register</button>
                             </div>
                             <p>All ready have an account? <Link to = '/login'>Please Login</Link></p>
                         </div>
