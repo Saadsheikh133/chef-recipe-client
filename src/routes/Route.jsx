@@ -12,6 +12,7 @@ import ErrorPage from "../pages/errorPage/ErrorPage";
 import About from "../pages/shared/about/About";
 import ChefRecipes from "../pages/chefRecipes/ChefRecipes";
 import RecipeLayout from "../layout/RecipeLayout";
+import PrivateRoute from "../privateRoutes/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,9 @@ const router = createBrowserRouter([
     },
     {
         path: 'recipe',
-        element: <RecipeLayout></RecipeLayout>,
+        element: <PrivateRoute>
+            <RecipeLayout></RecipeLayout>
+        </PrivateRoute>,
         children: [
             {
                 path: ':id',
