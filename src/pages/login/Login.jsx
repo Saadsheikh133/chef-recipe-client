@@ -6,7 +6,36 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, googleLogin } = useContext(AuthContext);
+
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                toast('🦄 User login successfully', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            })
+            .catch(error => {
+                toast(error.message, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+        })
+    }
 
     const handleLoginUser = event => {
         event.preventDefault();
@@ -56,12 +85,12 @@ const Login = () => {
                 pauseOnHover
                 theme="light"
             />
-            <form onSubmit={handleLoginUser} className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col">
+            <form onSubmit={handleLoginUser} className="hero min-h-screen  container mx-auto  bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% rounded-lg">
+                <div className="hero-content flex-col glass rounded-lg">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold mb-4">Please Login</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -79,10 +108,12 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none">Login</button>
                             </div>
-                            <p>New to Bangla food? <Link to = '/register'>Please Register.</Link></p>
+                            <p>New to Bangla food? <Link to='/register'>Please Register.</Link></p>
                         </div>
+                        <button onClick={handleGoogleLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none'>Google</button>
+                        <button className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none my-5 '>Github</button>
                     </div>
                 </div>
             </form>

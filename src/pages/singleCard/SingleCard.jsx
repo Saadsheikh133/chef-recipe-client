@@ -17,7 +17,7 @@ const SingleCard = ({ chef }) => {
                     <p>Num of Recipes: {num_recipes}</p>
                     <p>Likes: {likes} <FaThumbsUp className='inline ml-2 text-blue-400'></FaThumbsUp> </p>
                     <div className="card-actions justify-center mt-4">
-                        <Link to = {`/recipe/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
+                        <Link to={`/recipe/${id}`}><button className="btn btn-primary bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none">View Recipes</button></Link>
                     </div>
                 </div>
             </div>

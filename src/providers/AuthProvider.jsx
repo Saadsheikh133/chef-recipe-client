@@ -1,16 +1,23 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
+import { GoogleAuthProvider } from "firebase/auth";
 
 const auth = getAuth(app)
 
 export const AuthContext = createContext(null);
+const provider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const googleLogin = () => {
+        setLoading(true);
+        return signInWithPopup(auth, provider)
+    }
     
     const registerUser = (email, password) => {
         setLoading(true);
@@ -42,7 +49,8 @@ const AuthProvider = ({ children }) => {
         registerUser,
         loginUser,
         logOutUser,
-        loading
+        loading,
+        googleLogin
     }
     return (
         <AuthContext.Provider value = {authInfo}>
