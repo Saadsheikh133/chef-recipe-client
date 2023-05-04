@@ -10,7 +10,7 @@ const FoodFestival = () => {
     return (
         <>
             <h1 className='mt-8 text-4xl font-bold text-center'>Food Festival Slider</h1>
-            <div className='lg:w-1/2 mx-auto mt-8'>
+            <div className='container mx-auto mt-8'>
                 <div className="carousel w-full">
                     <div id="slide1" className="carousel-item relative w-full">
                         <img src={food1} className="w-full rounded-lg" />

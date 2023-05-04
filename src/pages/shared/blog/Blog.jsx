@@ -1,9 +1,23 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const Blog = () => {
     return (
         <div className='container mx-auto'>
+            <header className='flex items-center justify-center mb-5 text-center border-b-4 border-b-indigo-200 pb-5'>
+                <div className="">
+                    <Pdf targetRef={ref} filename="code-example.pdf">
+                        {({ toPdf }) => <button className='btn btn-primary mt-4 mb-4' onClick={toPdf}>Generate Pdf</button>}
+                    </Pdf>
+                    <div ref={ref}>
+                        <h1 className='text-2xl mb-3'>Explore react to pdf convert from here!!!</h1>
+                        <h2 className='text-xl'>This is a blog page.I will try to explore something new here! This blog page showing some questions and answers.It was a realtime experience for me.This questions give me some extra knowledge.</h2>
+                    </div>
+                </div>
+            </header>
             <h2 className='text-5xl font-bold text-center mb-5'>This is Blog page</h2>
             <div>
                 <h3 className='text-2xl font-bold text-center mb-3'>1.The main different between controlled and uncontrolled components.</h3>

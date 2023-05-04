@@ -11,8 +11,8 @@ const PithaInfo = () => {
             <h1 className='text-center font-bold text-4xl mt-10'>Deshi Pitha</h1>
             <div className='container mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 h-full mx-auto'>
                 <div className="card w-ful h-full bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={patishapta} alt="Shoes" className="rounded-xl" />
+                    <figure className="pt-10">
+                        <img src={patishapta} alt="Shoes" className="rounded-xl h-96" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Patishapta Pitha</h2>
@@ -20,8 +20,8 @@ const PithaInfo = () => {
                     </div>
                 </div>
                 <div className="card w-full h-full bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={telpoa} alt="Shoes" className="rounded-xl" />
+                    <figure className="pt-10">
+                        <img src={telpoa} alt="Shoes" className="rounded-xl h-96" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Telpoa Pitha</h2>
@@ -29,8 +29,8 @@ const PithaInfo = () => {
                     </div>
                 </div>
                 <div className="card w-full h-full bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={golap} alt="Shoes" className="rounded-xl" />
+                    <figure className="pt-10">
+                        <img src={golap} alt="Shoes" className="rounded-xl h-96" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Golap pitha</h2>
@@ -38,8 +38,8 @@ const PithaInfo = () => {
                     </div>
                 </div>
                 <div className="card w-full h-full bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={nokshi} alt="Shoes" className="rounded-xl" />
+                    <figure className="pt-10">
+                        <img src={nokshi} alt="Shoes" className="rounded-xl h-96" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Dhakaiya Nokshi Pitha</h2>

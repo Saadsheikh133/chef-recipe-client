@@ -12,7 +12,7 @@ const ChefInfo = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/chefInfo')
+        fetch('https://b7a10-chef-recipe-hunter-server-side-saadsheikh133.vercel.app/chefInfo')
             .then(res => res.json())
             .then(data => {
                 setChefs(data)

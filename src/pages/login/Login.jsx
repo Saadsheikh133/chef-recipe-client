@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaRegEye } from 'react-icons/fa';
+import { FaGithub, FaGoogle, FaRegEye } from 'react-icons/fa';
 
 const Login = () => {
     const [show, setShow] = useState(false);
@@ -20,6 +20,7 @@ const Login = () => {
         githubLogin()
             .then(result => {
                 const loggedUser = result.user;
+                navigate(from, { replace: true })
                 toast('🦄 User login successfully', {
                     position: "top-center",
                     autoClose: 5000,
@@ -50,6 +51,7 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const loggedUser = result.user;
+                navigate(from, { replace: true })
                 toast('🦄 User login successfully', {
                     position: "top-center",
                     autoClose: 5000,
@@ -83,7 +85,6 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 navigate(from, {replace: true})
                 form.reset();
                 toast('🦄 User login successfully', {
@@ -149,8 +150,8 @@ const Login = () => {
                             </div>
                             <p>New to this site? <Link to='/register'>Please Register.</Link></p>
                         </div>
-                        <button onClick={handleGoogleLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none'>Google</button>
-                        <button onClick={handleGithubLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none my-5 '>Github</button>
+                        <button onClick={handleGoogleLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none'> <FaGoogle size = {20} className='text-black mr-5'></FaGoogle>Google</button>
+                        <button onClick={handleGithubLogin} className='btn w-3/4 mx-auto bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 border-none my-5'> <FaGithub className='text-black mr-5' size = {25} ></FaGithub> Github</button>
                     </div>
                 </div>
             </form>
