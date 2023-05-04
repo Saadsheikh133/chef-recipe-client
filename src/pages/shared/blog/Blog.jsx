@@ -10,7 +10,7 @@ const Blog = () => {
             <header className='flex items-center justify-center mb-5 text-center border-b-4 border-b-indigo-200 pb-5'>
                 <div className="">
                     <Pdf targetRef={ref} filename="code-example.pdf">
-                        {({ toPdf }) => <button className='btn btn-primary mt-4 mb-4' onClick={toPdf}>Generate Pdf</button>}
+                        {({ toPdf }) => <button className='btn bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white mt-4 mb-4' onClick={toPdf}>Generate Pdf</button>}
                     </Pdf>
                     <div ref={ref}>
                         <h1 className='text-2xl mb-3'>Explore react to pdf convert from here!!!</h1>

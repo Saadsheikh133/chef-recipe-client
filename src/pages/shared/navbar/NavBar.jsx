@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveLink from '../activelink/ActiveLink';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
 
 const NavBar = () => {
     const { user, logOutUser } = useContext(AuthContext);
