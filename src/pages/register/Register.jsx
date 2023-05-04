@@ -7,11 +7,9 @@ import { FaRegEye } from 'react-icons/fa';
 
 const Register = () => {
     const [show, setShow] = useState(false);
-    const { registerUser, user, updateUser } = useContext(AuthContext);
+    const { registerUser, updateUser } = useContext(AuthContext);
     const navigate = useNavigate();
-    const location = useLocation();
 
-    const from = location.state?.from?.pathname || '/';
 
 
     const handleRegister = event => {
@@ -21,7 +19,6 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo)
 
         if (!/(?=.*[A-Z])/.test(password)) {
             return toast('🦄 Password must be at least one uppercase!', {
@@ -67,7 +64,7 @@ const Register = () => {
                         console.log(result?.user)
                     })
                     .catch(error => console.log(error.message))
-                navigate(from, { replace: true })
+                navigate('/login', { replace: true })
                 form.reset();
                 toast('🦄 User has been created successfully', {
                     position: "top-center",
