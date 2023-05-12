@@ -7,4 +7,4 @@
 *3. In this project has a blog page.There are some important questions answered And added a system to convert or download PDF files from React.
 *4. In this project implement user login and registration method.when user will login or registered.Then users use this project properly.
 *5. In this project, have a reasonable navbar one website banner and a reasonable footer.
-*6. A three way login system has been added to this project. first login system is email and password.second system is google login and last is github authentication.
+*6. A three way login system has been added to this project. first login system is email and password.second system is google login and last is github authentication. 
