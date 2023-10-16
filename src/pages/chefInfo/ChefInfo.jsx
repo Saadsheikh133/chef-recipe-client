@@ -10,9 +10,8 @@ const ChefInfo = () => {
     const [loading, setLoading] = useState(true);
 
 
-
     useEffect(() => {
-        fetch('https://b7a10-chef-recipe-hunter-server-side-saadsheikh133.vercel.app/chefInfo')
+        fetch('http://localhost:5000/chefInfo')
             .then(res => res.json())
             .then(data => {
                 setChefs(data)
@@ -43,7 +42,8 @@ const ChefInfo = () => {
                 <FaSync></FaSync>
             </svg>
         </button> */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14 container mx-auto'>
+            <h2 className='lg:text-6xl text-4xl font-bold text-center mt-20'>All Chefs Are Here!!</h2>
+        <div className='grid grid-cols-1 px-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14 container mx-auto'>
             {
                 chefs.map(chef => <SingleCard
                     key={chef.id}
