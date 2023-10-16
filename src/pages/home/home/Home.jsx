@@ -4,6 +4,7 @@ import PithaInfo from '../pitha/PithaInfo';
 import Banner from '../banner/Banner';
 import FoodFestival from '../foodFestival/FoodFestival';
 import ChefInfo from '../../chefInfo/ChefInfo';
+import Contact from '../Contact/Contact';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <ChefInfo></ChefInfo>
             <PithaInfo></PithaInfo>
             <FoodFestival></FoodFestival>
+            <Contact></Contact>
         </div>
     );
 };
