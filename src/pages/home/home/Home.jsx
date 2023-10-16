@@ -5,6 +5,7 @@ import Banner from '../banner/Banner';
 import FoodFestival from '../foodFestival/FoodFestival';
 import ChefInfo from '../../chefInfo/ChefInfo';
 import Contact from '../Contact/Contact';
+import FoodCategory from '../FootCategory/FoodCategory';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner></Banner>
             <ChefInfo></ChefInfo>
             <PithaInfo></PithaInfo>
+            <FoodCategory></FoodCategory>
             <FoodFestival></FoodFestival>
             <Contact></Contact>
         </div>
