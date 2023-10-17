@@ -7,6 +7,7 @@ import ChefInfo from '../../chefInfo/ChefInfo';
 import Contact from '../Contact/Contact';
 import FoodCategory from '../FootCategory/FoodCategory';
 import BestFood from '../../BestFood/BestFood';
+import Subscribe from '../Subscribe/Subscribe';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
             <FoodCategory></FoodCategory>
             <BestFood></BestFood>
             <FoodFestival></FoodFestival>
+            <Subscribe></Subscribe>
             <Contact></Contact>
         </div>
     );

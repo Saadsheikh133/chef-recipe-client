@@ -3,11 +3,11 @@ import bestFood from '../../assets/images/bestFood.avif';
 
 const BestFood = () => {
     return (
-        <div className="container mx-auto my-20 shadow-lg">
+        <div className="container mx-auto my-20">
             <div className='text-center'>
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-400 inline-block text-transparent bg-clip-text">Do Not Miss!!</h2>
             </div>
-            <div className='bg-gray-300 py-16 mt-10 rounded-xl lg:flex justify-evenly items-center gap-4 px-4'>
+            <div className='bg-gray-300 py-16 mt-10 rounded-xl lg:flex justify-evenly items-center gap-4 px-4 shadow-lg'>
                 <img className='rounded-lg mx-3' src={bestFood} alt="" />
                 <div>
                     <h2 className='text-2xl lg:text-4xl my-3 font-bold text-center bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-400 inline-block text-transparent bg-clip-text '>Try Now!! Crispy and flavorful.</h2>

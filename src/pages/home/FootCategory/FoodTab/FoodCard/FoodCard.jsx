@@ -3,8 +3,8 @@
 const FoodCard = ({ food }) => {
     const { image, foodName, test, recipe, price, } = food;
     return (
-        <div className="card h-full bg-slate-50 shadow-xl relative">
-            <figure><img className="rounded-2xl p-2 h-[350px]" src={image} alt="Shoes" /></figure>
+        <div className="card w-full h-full bg-slate-50 shadow-xl relative">
+            <figure><img className="rounded-2xl p-2 lg:h-[350px]" src={image} alt="Shoes" /></figure>
             <div className="card-body pt-3">
                 <h2 className="card-title text-4xl mb-2">Food Name: {foodName}</h2>
                 <div className="text-2xl space-y-2">
