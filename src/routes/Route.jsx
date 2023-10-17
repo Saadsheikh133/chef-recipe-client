@@ -13,6 +13,7 @@ import About from "../pages/shared/about/About";
 import ChefRecipes from "../pages/chefRecipes/ChefRecipes";
 import RecipeLayout from "../layout/RecipeLayout";
 import PrivateRoute from "../privateRoutes/PrivateRoute";
+import AllFoods from "../pages/AllFoods/AllFoods";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: 'about',
                 element: <About></About>
+            },
+            {
+                path: 'allFoods',
+                element: <AllFoods></AllFoods>
             }
         ]
     },
