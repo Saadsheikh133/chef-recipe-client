@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
@@ -13,10 +13,9 @@ import { BiSolidQuoteLeft } from "react-icons/bi";
 
 const CustomerReview = () => {
     const [reviews, setReviews] = useState([]);
-    console.log(reviews)
 
     useEffect(() => {
-        fetch("http://localhost:5000/reviews")
+        fetch("https://b7a10-chef-recipe-hunter-server-side-ecru.vercel.app/reviews")
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
@@ -25,6 +24,7 @@ const CustomerReview = () => {
 
     return (
         <div className='my-20 container mx-auto'>
+            <h2 className='text-5xl font-bold text-center my-16'>Our Customer Review!</h2>
             <Swiper
                 slidesPerView={1}
                 spaceBetween={10}
@@ -49,11 +49,11 @@ const CustomerReview = () => {
                         spaceBetween: 50,
                     },
                 }}
-                modules={[Pagination, Autoplay]}
+                modules={[Autoplay]}
                 className="mySwiper"
             >
                 {
-                    reviews.map(review => <SwiperSlide key={review.id}> <div className="card bg-purple-200 py-4 rounded-ee-[80px] rounded-ss-[80px]">
+                    reviews.map(review => <SwiperSlide key={review.id}> <div className="bg-purple-200 py-4 rounded-ee-[100px] rounded-ss-[100px]">
                         <div className="card-body text-lg font-semibold px-10">
                             <div className="flex justify-between">
                                 <p>

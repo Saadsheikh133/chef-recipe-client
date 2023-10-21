@@ -15,7 +15,7 @@ const Footer = () => {
                     <h2 className='text-2xl font-bold mb-5 pl-2'>Links</h2>
                     <div className='text-xl'>
                         <p><Link><FaAngleRight className='inline'></FaAngleRight>Services</Link></p>
-                        <p className='mt-3 mb-3'><Link><FaAngleRight className='inline'></FaAngleRight>Portfolio</Link></p>
+                        <p className='mt-3 mb-3'><a href='https://portfolio-f3901.web.app/'><FaAngleRight className='inline'></FaAngleRight>Portfolio</a></p>
                         <p><Link><FaAngleRight className='inline'></FaAngleRight>Recipes</Link></p>
                     </div>
                 </div>

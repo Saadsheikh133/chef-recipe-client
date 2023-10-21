@@ -11,7 +11,7 @@ const FoodCategory = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/foods")
+        fetch("https://b7a10-chef-recipe-hunter-server-side-ecru.vercel.app/foods")
             .then(res => res.json())
         .then(data => {
             setFoods(data)

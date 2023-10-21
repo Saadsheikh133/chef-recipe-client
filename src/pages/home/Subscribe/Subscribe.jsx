@@ -38,7 +38,7 @@ const Subscribe = () => {
             <p className="text-2xl font-bold text-center">Get updates about our latest products and offers</p>
             <form onSubmit={ subscribed} className="text-center my-10 relative" required>
                 <input required className="border w-full lg:w-2/4 py-5 rounded-full font-bold px-6 lg:text-xl" type="email" name="email" id="" placeholder="Enter your email" />
-                <input className="font-semibold px-4 py-3 mt-2 text-2xl rounded-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white hover:border-none transition-transform absolute top-0 right-2 lg:right-[415px]" type="submit" value="Subscribe" />
+                <input className="font-semibold px-4 py-3 mt-2 text-2xl rounded-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white hover:border-none transition-transform absolute top-0 right-2 lg:right-[350px]" type="submit" value="Subscribe" />
             </form>
         </div>
     );
