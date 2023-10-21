@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import FoodTab from "./FoodTab/FoodTab";
+import { Tab } from '@headlessui/react'
 
 
 const FoodCategory = () => {
     const [foods, setFoods] = useState([]);
-    const [tabIndex, setTabIndex] = useState('Bangladesh')
 
-
-    const bangladesh = foods.filter(food => food.country === 'Bangladesh');
-    const india = foods.filter(food => food.country === 'India');
-    const japan = foods.filter(food => food.country === 'Japan');
-    const thailand = foods.filter(food => food.country === 'Thailand');
+    function classNames(...classes) {
+        return classes.filter(Boolean).join(' ')
+    }
 
 
     useEffect(() => {
         fetch("http://localhost:5000/foods")
             .then(res => res.json())
-        .then(data => setFoods(data))
+        .then(data => {
+            setFoods(data)
+        })
     }, [])
 
     return (
@@ -29,27 +26,59 @@ const FoodCategory = () => {
             </div>
             <div className="lg:mx-10 mt-10 relative">
                 <div>
-                    <Tabs className='' selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                        <TabList className="lg:flex gap-2 space-y-2 lg:space-y-0">
-                            <Tab className="bg-slate-300 mx-2 px-4 py-1 text-xl rounded-2xl cursor-pointer">Bangladesh</Tab>
-                            <Tab className="bg-slate-300 mx-2 px-4 py-1 text-xl rounded-2xl cursor-pointer">India</Tab>
-                            <Tab className="bg-slate-300 mx-2 px-4 py-1 text-xl rounded-2xl cursor-pointer">Japan</Tab>
-                            <Tab className="bg-slate-300 mx-2 px-4 py-1 text-xl rounded-2xl cursor-pointer ">Thailand</Tab>
-                        </TabList>
-
-                        <TabPanel>
-                            <FoodTab foods={bangladesh}></FoodTab>
-                        </TabPanel>
-                        <TabPanel>
-                            <FoodTab foods ={india}></FoodTab>
-                        </TabPanel>
-                        <TabPanel>
-                            <FoodTab foods ={japan}></FoodTab>
-                        </TabPanel>
-                        <TabPanel>
-                            <FoodTab foods ={thailand}></FoodTab>
-                        </TabPanel>
-                    </Tabs>
+                    <div className="w-full px-2 py-16 sm:px-0">
+                        <Tab.Group>
+                            <Tab.List className="flex max-w-md space-x-1 rounded-xl bg-blue-900/20 p-1">
+                                {Object.keys(foods).map((category) => (
+                                    <Tab
+                                        key={category}
+                                        className={({ selected }) =>
+                                            classNames(
+                                                'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700',
+                                                'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
+                                                selected
+                                                    ? 'bg-white shadow'
+                                                    : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                                            )
+                                        }
+                                    >
+                                        {category}
+                                    </Tab>
+                                ))}
+                            </Tab.List>
+                            <Tab.Panels className="mt-2">
+                                {Object.values(foods).map((posts, idx) => (
+                                    <Tab.Panel
+                                        key={idx}
+                                        className={classNames(
+                                            'rounded-xl bg-white p-3',
+                                            'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
+                                        )}
+                                    >
+                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                            {posts.map((post) => (
+                                                <div key={post.id} className="card w-full h-full bg-slate-50 shadow-xl relative">
+                                                    <figure><img className="rounded-2xl p-2 lg:h-[350px]" src={post.image} alt="Shoes" /></figure>
+                                                    <div className="card-body pt-3">
+                                                        <h2 className="card-title text-2xl font-bold mb-2">Food Name: {post.foodName}</h2>
+                                                        <div className="text-xl space-y-2">
+                                                            <p> <span className="font-bold">Recipe:</span> {post.recipe}</p>
+                                                            <p><span className="font-bold">Test:</span> {post.test}</p>
+                                                            <p><span className="font-bold">Price:</span> ${post.price}</p>
+                                                        </div>
+                                                        <div className=" divider"></div>
+                                                        <div className="card-actions justify-end items-center ">
+                                                            <button className="font-bold px-4 py-2 rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white hover:border-none transition-transform">Show Details</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </Tab.Panel>
+                                ))}
+                            </Tab.Panels>
+                        </Tab.Group>
+                    </div>
                 </div>
             </div>
         </div>

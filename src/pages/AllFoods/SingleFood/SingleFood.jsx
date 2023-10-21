@@ -12,7 +12,7 @@ const SingleFood = ({ food }) => {
                     <p>Country: { country }</p>
                     <p>Test: { test }</p>
                     <div className="card-actions justify-end">
-                        <button className="font-bold px-4 py-2 mt-2 rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white hover:border-none transition-transform">Learn now!</button>
+                        <button className="font-bold px-4 py-2 mt-2 rounded-2xl bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white hover:border-none transition-transform">View Details</button>
                     </div>
                 </div>
             </div>

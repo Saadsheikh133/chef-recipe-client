@@ -8,6 +8,7 @@ import Contact from '../Contact/Contact';
 import FoodCategory from '../FootCategory/FoodCategory';
 import BestFood from '../../BestFood/BestFood';
 import Subscribe from '../Subscribe/Subscribe';
+import CustomerReview from '../CustomerReview/CustomerReview';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
             <PithaInfo></PithaInfo>
             <FoodCategory></FoodCategory>
             <BestFood></BestFood>
+            <CustomerReview></CustomerReview>
             <FoodFestival></FoodFestival>
             <Subscribe></Subscribe>
             <Contact></Contact>
